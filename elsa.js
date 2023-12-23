@@ -1,5 +1,5 @@
 
-// name form
+// visitor iformation
 
 const nameForm = document.getElementById('nameForm');
 const nameVal = document.getElementById("nameVal")
@@ -15,12 +15,14 @@ nameForm.addEventListener("submit", (event) =>{
     let letters = /^[A-Za-z]+$/
 
     if ((email.value.includes("@" && ".") === true) && (fname.value.match(letters)) && (lname.value.match(letters)) ){
-        nameVal.textContent = "Your infromation has been submitted"
-    } else {nameVal.textContent = "Invalid information"}
+        setTimeout(() => {nameVal.textContent = "Your infromation has been submitted"}, 1000)
+    } else {
+        setTimeout(() => {nameVal.textContent = "Invalid information"}, 1000)
+    }
     
     })
 
 
-// något annat
+// QUIZ 
 
 
