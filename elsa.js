@@ -40,6 +40,8 @@ quiz.addEventListener("submit", (event) =>{
     const answerQ4 = document.querySelector('input[name="q4"]:checked')
     const answerQ5 = document.querySelector('input[name="q5"]:checked')
 
+    let letters = /^[A-Za-z]+$/
+
     // counting score 
     let score = 0
     if (answerQ1 && answerQ1.value === "godric" ){score++}
@@ -48,14 +50,24 @@ quiz.addEventListener("submit", (event) =>{
     if (answerQ3 && answerQ3.value.includes("James") === true){score++}
     if (answerQ4 && answerQ4.value === "otter" ){score++}
     if (answerQ5 && answerQ5.value === "six" ){score++}
+    
     console.log("antal rätt", score)
 
-    // valdiation 
-    if (answerQ1){quizVal.textContent = "Your Quiz has been submitted"
-    } else {quizVal.textContent="q1 är inte besvarad"}
+   
+    // valdiation - show + count unanswered questions
+    let answered = 5
+
+    if (answerQ1){answered--}
+    if (answerQ2.length>0){answered--}
+    if (answerQ3.value.match(letters)){answered--} 
+    if (answerQ4){answered--}
+    if (answerQ5){answered--}
+
+    if (answered<=5){quizVal.textContent="You have " + answered +" questions left to answer! All questions needs to be answered"
+    } else {quizVal.textContent="You have answered all questions"}
+
 
     
-
 
 })
 
