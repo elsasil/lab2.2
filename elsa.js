@@ -28,6 +28,14 @@ nameForm.addEventListener("submit", (event) =>{
 
 const quiz = document.getElementById("quiz")
 const quizVal= document.getElementById("quizVal")
+const quizScore= document.getElementById("quizScore")
+const q3Val = document.getElementById("q3Val")
+
+const q1R= document.getElementById("q1R")
+const q2R= document.getElementById("q2R")
+const q3R= document.getElementById("q3R")
+const q4R= document.getElementById("q4R")
+const q5R= document.getElementById("q5R")
 
 
 quiz.addEventListener("submit", (event) =>{
@@ -50,8 +58,6 @@ quiz.addEventListener("submit", (event) =>{
     if (answerQ3 && answerQ3.value.includes("James") === true){score++}
     if (answerQ4 && answerQ4.value === "otter" ){score++}
     if (answerQ5 && answerQ5.value === "six" ){score++}
-    
-    console.log("antal rätt", score)
 
    
     // valdiation - show + count unanswered questions
@@ -59,14 +65,25 @@ quiz.addEventListener("submit", (event) =>{
 
     if (answerQ1){answered--}
     if (answerQ2.length>0){answered--}
-    if (answerQ3.value.match(letters)){answered--} 
+    if (answerQ3.value.match(letters)){answered--
+        } else {q3Val.textContent="You need to write a name, letters only"
+                q3Val.style.backgroundColor="red"
+        }
     if (answerQ4){answered--}
     if (answerQ5){answered--}
 
-    if (answered<=5){quizVal.textContent="You have " + answered +" questions left to answer! All questions needs to be answered"
-    } else {quizVal.textContent="You have answered all questions"}
+    if (answered<=5 && answered>0){quizVal.textContent="You have " + answered +" questions left to answer! All questions needs to be answered"
+        quizVal.style.backgroundColor="red"
+    } else {quizVal.textContent="You have answered all questions"
+            quizVal.style.backgroundColor="green"
+            quizScore.textContent=score+"/5"
 
-
+            q1R.textContent="Right answer: Godric"
+            q2R.textContent="Right answer: All of them"
+            q3R.textContent="Right answer: James"
+            q4R.textContent="Right answer: An otter"
+            q5R.textContent="Right answer: Six"
+    }
     
 
 })
