@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Harry Potter Quiz</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Crimson+Text&family=Henny+Penny&family=Irish+Grover&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -11,37 +17,40 @@
 <h1>HARRY POTTER QUIZ</h1>
 </header>
 
-<section>
-    
-    <form id = "nameForm">
-
-        <label for="fname">Name:</label>
-         <br>
-        <input type="text" id="fname" name="fname">
-         <br>
-
-        <label for="lname">Last Name:</label>
-        <br>
-        <input type="text" id="lname" name="lname">
-         <br>
-
-        <label for="email">Email:</label>
-         <br>
-        <input type="text" id="email" name="email">
-         <br>
-
-         <input type="submit" value="Submit">
-
-    </form> 
-
-    <div id="nameVal"> To take the quiz you first have to submit first name, last name and email</div>
-    
-</section>
 
 <main>
 
+    <section>
+    
+        <form id = "nameForm">
+    
+            <label for="fname">Name:</label>
+             <br>
+            <input type="text" id="fname" name="fname">
+             <br>
+    
+            <label for="lname">Last Name:</label>
+            <br>
+            <input type="text" id="lname" name="lname">
+             <br>
+    
+            <label for="email">Email:</label>
+             <br>
+            <input type="text" id="email" name="email">
+             <br>
+    
+             <input type="submit" value="Submit">
+    
+        </form> 
+    
+        <div id="nameVal"> To take the quiz you first have to submit first name, last name and email</div>
+        
+    </section>
+
+
     <form id = "quiz">
 
+        <section>
         <h3>Question 1</h3>
         <p>The four houses of Hogwarts are named after the four founders and share their surnames. What is Gryffindor's first name? * </p>
         <input type="radio" id="salazar" name="q1" value="salazar">
@@ -50,8 +59,11 @@
         <label for= "godric">Godric</label><br>
         <input type="radio" id="amos" name="q1" value="amos">
         <label for= "amos">Amos</label><br>
-        <div id="q1R"> </div>
+        <div id="q1R" class="right"> </div>
+        </section>
+       
 
+        <section>
         <h3>Question 2</h3>
         <p>Choose those who have been headmaster or headmistress of Hogwarts *</p>
         <input type="checkbox" id="albus" name="q2" value="albus">
@@ -60,14 +72,18 @@
         <label for= "dolores">Doleres Umbridge</label><br>
         <input type="checkbox" id="snape" name="q2" value="snape">
         <label for= "snape">Severus Snape</label><br>
-        <div id="q2R"> </div>
+        <div id="q2R" class="right"> </div>
+        </section>
 
+        <section>
         <h3>Question 3</h3>
         <p>What is Harry Potter's middle name? *</p>
         <input type="text" id="q3" name="q3">
         <div id = "q3Val"> </div>
-        <div id="q3R"> </div>
+        <div id="q3R" class ="right"> </div>
+        </section>
 
+        <section>
         <h3>Question 4</h3>
         <p>What form does Hermione Granger's patronus take? *</p>
         <input type="radio" id="otter" name="q4" value="otter">
@@ -76,8 +92,10 @@
         <label for= "horse">A horse</label><br>
         <input type="radio" id="hare" name="q4" value="hare">
         <label for= "hare">A hare</label><br>
-        <div id="q4R"> </div>
-
+        <div id="q4R" class ="right"> </div>
+        </section>
+            
+        <section>
         <h3>Question 5</h3>
         <p>How many siblings does Ron have? *</p>
         <input type="radio" id="four" name="q5" value="four">
@@ -86,16 +104,19 @@
         <label for= "five">Five</label><br>
         <input type="radio" id="six" name="q5" value="six">
         <label for= "six">Six</label><br>
-        <div id="q5R"> </div>
+        <div id="q5R" class="right"> </div>
+        </section>
 
-        <input type="submit" value="submit">
-
+        <div class ="button">
+        <input type="Submit" value="Submit the Quiz">
+        </div>
     </form>
 
+    
     <div id="quizVal"> </div>
 
     <div id="quizScore"> </div>
-    
+
 
 
 </main>

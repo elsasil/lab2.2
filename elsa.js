@@ -15,10 +15,13 @@ nameForm.addEventListener("submit", (event) =>{
     let letters = /^[A-Za-z]+$/
 
     if ((email.value.includes("@" && ".") === true) && (fname.value.match(letters)) && (lname.value.match(letters)) ){
-        setTimeout(() => {nameVal.textContent = "Your infromation has been submitted"}, 1000)
-    } else {
-        setTimeout(() => {nameVal.textContent = "Invalid information"}, 1000)
+        nameVal.textContent = "Your infromation has been submitted"
+        nameVal.style.color = "green"
+
+    } else {nameVal.textContent = "Invalid information, try again!"
+            nameVal.style.color = "rgba(255, 0, 0, 0.689)"
     }
+    
     
     })
 
@@ -65,18 +68,25 @@ quiz.addEventListener("submit", (event) =>{
 
     if (answerQ1){answered--}
     if (answerQ2.length>0){answered--}
-    if (answerQ3.value.match(letters)){answered--
-        } else {q3Val.textContent="You need to write a name, letters only"
-                q3Val.style.backgroundColor="red"
-        }
+    if (answerQ3.value.match(letters)){answered--} 
     if (answerQ4){answered--}
     if (answerQ5){answered--}
 
     if (answered<=5 && answered>0){quizVal.textContent="You have " + answered +" questions left to answer! All questions needs to be answered"
-        quizVal.style.backgroundColor="red"
-    } else {quizVal.textContent="You have answered all questions"
-            quizVal.style.backgroundColor="green"
+        quizVal.style.color="rgba(255, 0, 0, 0.689)"
+        quizScore.textContent="   "
+        q1R.textContent="  "
+        q2R.textContent="   "
+        q3R.textContent="   "
+        q4R.textContent="  "
+        q5R.textContent=" "
+        } 
+        
+        else {quizVal.textContent="You have answered all questions, your score is..."
+            quizVal.style.backgroundColor="rgb(21, 21, 21)"
+            quizVal.style.color="white"
             quizScore.textContent=score+"/5"
+            quizScore.style.color="green"
 
             q1R.textContent="Right answer: Godric"
             q2R.textContent="Right answer: All of them"
