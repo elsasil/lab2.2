@@ -68,7 +68,13 @@ quiz.addEventListener("submit", (event) =>{
 
     if (answerQ1){answered--}
     if (answerQ2.length>0){answered--}
-    if (answerQ3.value.match(letters)){answered--} 
+    if (answerQ3.value.match(letters)){answered--
+            q3Val.textContent=" "
+        } else{q3Val.textContent="You have to write a name, letters only!"
+                q3Val.style.color="rgba(255, 0, 0, 0.689)"
+      }
+    
+    
     if (answerQ4){answered--}
     if (answerQ5){answered--}
 
