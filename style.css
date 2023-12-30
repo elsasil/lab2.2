@@ -129,8 +129,8 @@ input[type=submit]:hover{background-color: rgb(1, 102, 1);}
 }
 
 .right {
-    margin-top: 12px; 
-    color: rgba(255, 0, 0, 0.689);
+    margin-top: 18px; 
+    color: orange;
 }
 
 #q3Val{
