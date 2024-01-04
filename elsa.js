@@ -63,7 +63,7 @@ quiz.addEventListener("submit", (event) =>{
     if (answerQ5 && answerQ5.value === "six" ){score++}
 
    
-    // valdiation - show + count unanswered questions
+    // valdiation - show/count unanswered questions or show score and right answers
     let answered = 5
 
     if (answerQ1){answered--}
