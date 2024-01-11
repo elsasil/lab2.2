@@ -40,6 +40,10 @@ const q3R= document.getElementById("q3R")
 const q4R= document.getElementById("q4R")
 const q5R= document.getElementById("q5R")
 
+const q1M= document.getElementById("q1M")
+const q2M= document.getElementById("q2M")
+const q3M= document.getElementById("q3M")
+
 
 quiz.addEventListener("submit", (event) =>{
     
@@ -63,32 +67,42 @@ quiz.addEventListener("submit", (event) =>{
     if (answerQ5 && answerQ5.value === "six" ){score++}
 
    
-    // valdiation - show/count unanswered questions or show score and right answers
-    let answered = 5
+// mandatory
+    let mustanswer = 3
 
-    if (answerQ1){answered--}
-    if (answerQ2.length>0){answered--}
-    if (answerQ3.value.match(letters)){answered--
+    if (answerQ1){mustanswer--
+        q1M.textContent=" "}
+    else {q1M.textContent="Mandatory question "}
+
+    if (answerQ2.length>0){mustanswer--
+        q2M.textContent=" "}
+    else {q2M.textContent="Mandatory question  "}
+
+    if (answerQ3.value.match(letters)){mustanswer--
             q3Val.textContent=" "
+            q3M.textContent=" "
+
         } else{q3Val.textContent="You have to write a name, letters only!"
+                q3M.textContent="Mandatory question   "
                 q3Val.style.color="rgba(255, 0, 0, 0.689)"
       }
     
     
-    if (answerQ4){answered--}
-    if (answerQ5){answered--}
+// Sucess (+ right answers) vs error message
 
-    if (answered<=5 && answered>0){quizVal.textContent="You have " + answered +" questions left to answer! All questions needs to be answered"
+    if (mustanswer>0){quizVal.textContent="Please answer all the mandatory questions before submitting the quiz"
         quizVal.style.color="rgba(255, 0, 0, 0.689)"
-        quizScore.textContent="   "
-        q1R.textContent="  "
-        q2R.textContent="   "
-        q3R.textContent="   "
-        q4R.textContent="  "
+        quizScore.textContent=" "
+
+        q1R.textContent=" "
+        q2R.textContent=" "
+        q3R.textContent=" "
+        q4R.textContent=" "
         q5R.textContent=" "
+        
         } 
         
-        else {quizVal.textContent="You have answered all questions, your score is..."
+        else {quizVal.textContent="You have answered all manadatory questions, your score is..."
             quizVal.style.backgroundColor="rgb(21, 21, 21)"
             quizVal.style.color="white"
             quizScore.textContent=score+"/5"
